@@ -2,14 +2,18 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+  // Initializes an empty string to later fill
   finalPassword = ""
   password = ""
+  // Calls all the functions to get length, lowercase, uppercase, special char, and numbers
   length = getLength()
   lower = getLowerCase()
   upper = getUpperCase()
   special = getSpecialCase()
   numbers = getnumChar()
+  // Adds all of the function returns into the empty string
   password = lower + upper + special + numbers
+  // Uses a random number generater to add characters into the finalPassword string until the desired length is met
   for (x = 0; x < length; x++) {
     finalPassword += password.charAt(Math.floor(Math.random() * password.length))
     console.log("this has looped")
@@ -19,6 +23,7 @@ function generatePassword() {
 
 
 function getLength() {
+  // Gets the users desired password length between 8 and 128 characters
     var passLength = prompt("How many characters would you like your password to be? Must be between 8 and 128 characters")
   if (!passLength) {
     return
@@ -37,6 +42,7 @@ function getLength() {
 }
 
 function getLowerCase() {
+  // Determines if user wants lowercase characters in the generated password
   var lowerCase = confirm("Would you like your password to have lowercase characters?")
   var lowercaseChar = "abcdefghijklmnopqrstuvwxyz"
   if (lowerCase) {
@@ -47,6 +53,7 @@ function getLowerCase() {
 } 
 
 function getUpperCase() {
+  // Determines if the user wants uppercase characters in the generated password
   var upperCase = confirm("Would you like your password to have uppercase characters?")
   var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   if (upperCase) {
@@ -57,6 +64,7 @@ function getUpperCase() {
 }
 
 function getSpecialCase() {
+  // Determines if the user wants special characters in the generated password
   var specialCase = confirm("Would you like your password to have special characters?")
   var specialCharacters ="!@#$%^&*()_+`-=[]{}|<.>?/;,"
   if (specialCase) {
@@ -67,6 +75,7 @@ function getSpecialCase() {
 }
 
 function getnumChar() {
+  // Determines if the user wants numbers in the generated password
   var numChar = confirm("Would you like your password to have numbers?")
   var numbers ="1234567890"
   if (numChar) {
