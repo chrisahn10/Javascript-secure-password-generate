@@ -2,6 +2,8 @@
 
 Javascript program that generates a password after prompting the user for certain requirements
 
+Site is live at : https://chrisahn10.github.io/Javascript-secure-password-generate/
+
 The Requirements for the password that the users is prompted for includes:
         1 - Length (8-128 characters)
         2 - Uppercases
